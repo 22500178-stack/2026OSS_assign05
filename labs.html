@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>documnet</title>
+
+    <style>
+        #container {
+            width: 200px;
+            height: 50px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <!--요소 삭제하기-->
+    <h1>요소 삭제하기</h1>
+    <div id="list">
+        <p id="item1">Apple</p>
+        <p id="item2">Banana</p>
+        <p id="item3">Orange</p>
+    </div>
+    <button id="removebtn">삭제</button>
+
+    <script>
+        const item = document.querySelector("#item1");
+        const removebtn = document.querySelector("#removebtn");
+
+        removebtn.addEventListener("click", function () {
+            item.remove();
+        });
+    </script>
+
+    <hr />
+    <!--동적요소 추가하기-->
+    <h1>동적요소 추가하기</h1>
+    <button id="addbtn">동적요소 추가</button>
+    <div id="container"></div>
+
+    <script>
+        const container = document.querySelector("#container");
+        const p = document.createElement("p");
+        const addbtn = document.querySelector("#addbtn");
+        addbtn.addEventListener("click", function () {
+            p.textContent = "동적요소 추가됨";
+            container.appendChild(p);
+        });
+
+    </script>
+
+    <hr />
+    <!--이벤트-->
+    <h3>Click Event</h3>
+    <button id="clickbtn1">눌러보세요(alert)</button>
+    <button id="clickbtn2">눌러보세요(innerText)</button>
+    <button id="clickbtn3">눌러보세요(innerHTML)</button>
+    <div>여기에 데이터가 바뀝니다!</div>
+    <script>
+        const clickbtn1 = document.querySelector("#clickbtn1");
+        clickbtn1.addEventListener("mouseover", function (e) { //e: event 객체 (이름은 바꿔도 됨)
+            alert("Hello", e.innerText);
+        });
+    </script>
+
+    <hr />
+    <!--덧셈계산기-->
+    <input type="text" id="num1" size="5">
+    <input type="text" id="num2" size="5">
+    <button onclick="addNumbers()">+</button>
+    <input type="text" id="result" size="5" readonly>
+
+    <hr />
+    <!--innerHTML-->
+    <div id="div1" onclick="changeText()">Hello</div>
+</body>
+
+</html>
+
+<script>
+    function changeText() {
+        documnet.getElementById("#div1"), innerHTML = "<h1>Hello World!</h1>"
+
+    }
+
+    const btn = document.querySelector("#btn");
+    const num1 = document.querySelector("#num1");
+    const num2 = document.querySelector("#num2");
+    const result = document.querySelector("#result");
+    btn.addEventListener("click", function () {
+        alert("Hello!");
+    });
+
+    //window.addEventListener("load", 함수명);
+
+    document.getElementById("clickbtn1").addEventListener("click", function () {
+        document.getElementById("text").textContent = "첫 번째 버튼을 눌렀다";
+    });
+    document.getElementById("clickbtn2").addEventListener("click", function () {
+        document.getElementById("text").textContent = "두 번째 버튼을 눌렀다";
+    });
+    document.getElementById("clickbtn2").addEventListener("click", function () {
+        document.getElementById("text").textContent = "세 번째 버튼을 눌렀다";
+    });
+
+
+</script>
