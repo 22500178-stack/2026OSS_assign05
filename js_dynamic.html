@@ -19,7 +19,23 @@
   </div>
 
   <script>
-    
+    window.onload = function () {
+      const input = document.getElementById("itemInput");
+      const addBtn = document.querySelector("#addBtn");
+      const list = document.querySelector("#itemList");
+
+      <!--클릭을 했을 떄-->
+      addBtn.addEventListener("click", function () {
+        const value = input.value.trim();
+
+        <!--내용을 입력하지 않았을 때 알림 뜨게-->
+        if (value === "") {
+          alert("내용을 입력하세요.");
+          input.focus();
+          return;
+        }
+      });
+    };
   </script>
 </body>
 </html>
