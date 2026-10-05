@@ -12,6 +12,27 @@
     <p><a href="index.html">목록으로 가기</a></p>
     <h1>나의 러닝 기록 관리</h1>
 
+    <form id="runForm">
+        <div class="form-row">
+            <label for="date">날짜</label>
+            <input type="date" id="date" name="date">
+        </div>
+        <div class="form-row">
+            <label for="distance">거리 (km)</label>
+            <input type="text" id="distance" name="distance" placeholder="예: 5.5">
+        </div>
+        <div class="form-row">
+            <label for="time">시간 (분)</label>
+            <input type="text" id="time" name="time" placeholder="예: 30">
+        </div>
+        <div class="form-row">
+            <label for="note">메모</label>
+            <input type="text" id="note" name="note" placeholder="예: 평봉 러닝">
+        </div>
+
+        <button type="submit" id="submitBtn">Add</button>
+    </form>
+
     <table id="runTable">
         <thead>
             <tr>
